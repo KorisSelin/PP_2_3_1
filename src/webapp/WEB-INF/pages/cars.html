@@ -7,10 +7,16 @@
 </head>
 <body>
 <div>
-    <th:block th:each="msgCar : ${messagesCar}">
-        <h1 th:text="${msgCar}"></h1>
+
+    <h1>List of Cars (cars.html)</h1>
+    <h1>We output <th:block th:text="${count}"></th:block> cars</h1>
+    <br>
+
+    <th:block th:each="messgCar : ${cars}">
+        <h1 th:text="${ messgCar }"></h1>
     </th:block>
 
 </div>
 </body>
 </html>
+
