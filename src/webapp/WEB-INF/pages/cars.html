@@ -8,13 +8,34 @@
 <body>
 <div>
 
-    <h1>List of Cars (cars.html)</h1>
-    <h1>We output <th:block th:text="${count}"></th:block> cars</h1>
-    <br>
+    <h2>Cars:</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Brand</th>
+            <th>Color</th>
+            <th>Year</th>
+        </tr>
+        </thead>
+        <tbody>
 
-    <th:block th:each="messgCar : ${cars}">
-        <h1 th:text="${ messgCar }"></h1>
-    </th:block>
+        <h1>Выбор
+            <th:block th:text="${count}"></th:block>
+            авто
+        </h1>
+
+        <tr th:each="car : ${carsHtml}">
+            <td th:text="${car.model}"></td>
+            <td th:text="${car.age}"></td>
+            <td th:text="${car.speed}"></td>
+        </tr>
+
+<!--            <th:block th:each="messgCar : ${carsHtml}">-->
+<!--                <h1 th:text="${ messgCar }"></h1>-->
+<!--            </th:block>-->
+
+        </tbody>
+    </table>
 
 </div>
 </body>

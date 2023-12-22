@@ -11,7 +11,6 @@ import java.util.List;
 public class HelloController {
 
 	@GetMapping(value = "/")
-//	@RequestMapping(method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
 		List<String> messages = new ArrayList<>();
 		messages.add("Hello!");

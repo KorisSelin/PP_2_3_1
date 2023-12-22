@@ -11,8 +11,17 @@ import java.util.List;
 public class CarDAOImpl implements CarDAO {
     private static List<Car> carList;
 
-    static {
-        carList = new ArrayList<>();
+//    static {
+//        carList = new ArrayList<>();
+//        Car toyota = new Car("Toyota", 2022, 220);
+//        Car ford = new Car("Ford", 2020, 225);
+//        Car honda = new Car("Honda", 2019, 226);
+//        Car lexus = new Car("Lexus", 2018, 210);
+//        Car infinity = new Car("Infinity", 2019, 210);
+//        Collections.addAll(carList, toyota, ford, honda, lexus, infinity);
+//    }
+    public CarDAOImpl(){
+                carList = new ArrayList<>();
         Car toyota = new Car("Toyota", 2022, 220);
         Car ford = new Car("Ford", 2020, 225);
         Car honda = new Car("Honda", 2019, 226);
@@ -34,20 +43,4 @@ public class CarDAOImpl implements CarDAO {
         }
         return list.stream().limit(count).toList();
     }
-
-//    @Autowired
-//    private SessionFactory sessionFactory;
-//
-//    @Override
-//    public void add(User user) {
-//        sessionFactory.getCurrentSession().save(user);
-//    }
-//
-//    @Override
-//    @SuppressWarnings("unchecked")
-//    public List<User> listUsers() {
-//        TypedQuery<User> query=sessionFactory.getCurrentSession().createQuery("from User");
-//        return query.getResultList();
-//    }
-
 }
