@@ -1,8 +1,12 @@
 package web.model;
 
-import org.springframework.stereotype.Component;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table
@@ -16,12 +20,17 @@ public class User {
     private String surname;
     @Column
     private int age;
+    @Column
+    private int telefon;
     public User() {
     }
-    public User(String name, String surname, int age) {
+
+    public User(long id, String name, String surname, int age, int telefon) {
+        this.id = id;
         this.name = name;
         this.surname = surname;
         this.age = age;
+        this.telefon = telefon;
     }
 
     public long getId() {
@@ -56,13 +65,22 @@ public class User {
         this.age = age;
     }
 
+    public int getTelefon() {
+        return telefon;
+    }
+
+    public void setTelefon(int telefon) {
+        this.telefon = telefon;
+    }
+
     @Override
     public String toString() {
-        return "User[" +
+        return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", age=" + age +
-                ']';
+                ", telefon=" + telefon +
+                '}';
     }
 }

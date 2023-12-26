@@ -10,8 +10,13 @@ import web.service.UserService;
 @Controller
 public class UserController {
 
-    @Autowired
+//    @Autowired
     private UserService userService;
+    @Autowired
+    public UserController(UserService userService){
+        this.userService = userService;
+    }
+
 
     //Отображение пользователей
     @GetMapping("/")
@@ -42,6 +47,7 @@ public class UserController {
         return "redirect:/";
     }
 
+    //Обновление данных пользователя
     @RequestMapping("/update-info/{id}")
     public String updateUser(Model model, @PathVariable("id") long id) {
         User currentUser = userService.getUser(id);
